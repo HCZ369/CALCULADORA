@@ -22,6 +22,9 @@ function calculadora(button, display) {
 		case "=":
 			calcular(display);
 			break;
+		case ",":
+			addComa(display);
+			break;
 
 		default:
 			actualizar(display, button);
@@ -39,4 +42,12 @@ function actualizar(display, button) {
 }
 function borrar(display) {
 	display.innerHTML = 0;
+}
+
+function addComa() {
+	if (keypadButtons == "") {
+		document.getElementById("total").innerHTML = "0.";
+	} else if (!keypadButtons.includes(".")) {
+		document.getElementById("total").innerHTML += ".";
+	}
 }
